@@ -2,8 +2,8 @@ import { MCEvent } from '@managed-components/types'
 import { generateUrl, generateUUID, getRandomInt, getRequestBody } from '.'
 
 describe('Impact Radius MC works correctly', () => {
-  let fetchedRequests: any = []
-  let setCookies: any = []
+  const fetchedRequests: any = []
+  const setCookies: any = []
 
   const dummyClient = {
     title: 'Zaraz "Test" /t Page',

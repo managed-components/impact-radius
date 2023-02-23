@@ -98,7 +98,7 @@ export const generateUrl = (
     if (uuidCookie) {
       return uuidCookie
     } else {
-      let randomUUID = crypto.randomUUID()
+      const randomUUID = crypto.randomUUID()
       client.set(uuidCookieName, randomUUID)
       setUUIDWithExpiry(randomUUID)
       return randomUUID
@@ -106,7 +106,7 @@ export const generateUrl = (
   }
 
   function setUUIDWithExpiry(uuid) {
-    let expiryTime = new Date() // calculate expiry time here
+    const expiryTime = new Date() // calculate expiry time here
     expiryTime.setDate(expiryTime.getDate() + 720)
 
     client.set(uuidCookieName, uuid, {
@@ -115,7 +115,7 @@ export const generateUrl = (
   }
 
   function buildTrackConversionParams() {
-    let params = {}
+    const params = {}
     const hippoUUID = client.get('hippo-uuid') || ''
 
     params['custid'] = hippoUUID
