@@ -26,7 +26,7 @@ export const generateUrl = (
 
   const timeStamp = new Date().getTime()
 
-  const omap = {
+  const omap: any = {
     ordersubtotalprediscount: 'oabd',
     ordersubtotalpostdiscount: 'amount',
     referenceid: 'refid',
@@ -105,7 +105,7 @@ export const generateUrl = (
     }
   }
 
-  function setUUIDWithExpiry(uuid) {
+  function setUUIDWithExpiry(uuid: any) {
     const expiryTime = new Date() // calculate expiry time here
     expiryTime.setDate(expiryTime.getDate() + 720)
 
@@ -115,7 +115,7 @@ export const generateUrl = (
   }
 
   function buildTrackConversionParams() {
-    const params = {}
+    const params: any = {}
     const hippoUUID = client.get('hippo-uuid') || ''
 
     params['custid'] = hippoUUID
