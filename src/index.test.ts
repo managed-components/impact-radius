@@ -1,10 +1,7 @@
 import { MCEvent } from '@managed-components/types'
-import { generateUrl, generateUUID, getRandomInt, getRequestBody } from '.'
+import { generateUrl } from '.'
 
 describe('Impact Radius MC works correctly', () => {
-  const fetchedRequests: any = []
-  const setCookies: any = []
-
   const dummyClient = {
     title: 'Zaraz "Test" /t Page',
     timestamp: 1670502437,
@@ -18,10 +15,10 @@ describe('Impact Radius MC works correctly', () => {
     fetch: () => undefined,
     set: () => undefined,
     execute: () => undefined,
-    return: () => {},
+    return: () => undefined,
     get: () => undefined,
-    attachEvent: () => {},
-    detachEvent: () => {},
+    attachEvent: () => undefined,
+    detachEvent: () => undefined,
   }
 
   const fakeEvent = new Event('event', {}) as MCEvent
