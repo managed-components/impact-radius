@@ -1,5 +1,10 @@
 import { MCEvent } from '@managed-components/types'
 import { generateUrl } from '.'
+import crypto from 'crypto'
+
+if (!global.crypto) {
+  vi.stubGlobal('crypto', crypto)
+}
 
 describe('Impact Radius MC works correctly', () => {
   const dummyClient = {
